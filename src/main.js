@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import http from './http'
 import './assets/styles/reset.css'
+import './assets/styles/border.css'
+import './assets/styles/iconfont/iconfont.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = http
