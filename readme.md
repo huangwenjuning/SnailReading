@@ -11,11 +11,23 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
+<!-- rem -->
+  html font-size = 50px,
+  1rem = 50px
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+<!-- Eslint -->
+ 1、安装Eslint插件
+ 2、首选项中进行如下配置可自动eslint
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      {
+          "language": "html",
+          "autoFix": true
+      },
+      {
+          "language": "vue",
+          "autoFix": true
+      }
+  ]
