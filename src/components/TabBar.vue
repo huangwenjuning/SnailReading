@@ -1,11 +1,10 @@
 <template>
   <div class="tabbar border-top">
     <template v-for="item in tabbarList">
-      <div :class="[ selectedClass ]"
-        @click="handleClick(item.id)"
-        :checked = checked[item.id]
+      <div :class="{isSelected: checked[item.id], tabbar_item:'tabbar_item'}"
+        @click="changColor(item.id)"
         :key="item.id">
-        <i :class="'iconfont' + ' ' + 'icon-' +item.icon"></i>
+        <i :class="'iconfont' + ' ' + 'icon-' + item.icon"></i>
         <span class="tabbar_text">{{ item.text }}</span>
       </div>
     </template>
@@ -17,19 +16,21 @@ export default {
   data () {
     return {
       tabbarList: [],
-      checked: ['isChecked']
+      checked: [true]
     }
   },
   methods: {
-    handleClick (index) {
+    changColor (index) {
       console.log(index)
+      console.log(this.tabbarList.length, 'length')
+      for (let i = 0; i < this.tabbarList.length; i++) {
+        this.checked[i] = false
+      }
+      // this.checked[index] = true
+      this.$set(this.checked, index, true)
     }
   },
   computed: {
-    selectedClass () {
-      let classes = 'tabbar_item' + ' '
-      return classes
-    }
   },
   created () {
     this.$http.get('/tabbar').then(res => {
@@ -59,9 +60,6 @@ export default {
     flex-direction column
     color #b3b3b3
 
-    .isSelected
-      color #444
-
     .iconfont
       margin-bottom .1rem
       font-size .36rem
@@ -69,6 +67,6 @@ export default {
     .tabbar_text
       font-size .2rem
       line-height .2rem
-  .isSlected
-    color red
+  .isSelected
+    color #444
 </style>
