@@ -10,7 +10,6 @@ import './assets/styles/iconfont/iconfont.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = http
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

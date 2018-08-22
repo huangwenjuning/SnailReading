@@ -8,12 +8,29 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: () => import('@/pages/index.vue')
-    //   redirect: '/firstpage',
-    //   children: [{
-    //     path: '/firstpage',
-    //     name: 'firstpage',
-    //     component: () => import('@/page/home/firstpage'),
+      component: () => import('@/pages/index'),
+      redirect: '/reader',
+      children: [{
+        path: '/reader',
+        name: 'Reader',
+        component: () => import('@/pages/reader/Reader')
+      }]
+    },
+    {
+      path: '/classification',
+      name: 'ClassiFication',
+      component: () => import('@/pages/classification/ClassiFication')
+    },
+    {
+      path: '/bookdesk',
+      name: 'BookDesk',
+      component: () => import('@/pages/bookdesk/BookDesk')
+    },
+    {
+      path: '/mine',
+      name: 'Mine',
+      component: () => import('@/pages/mine/Mine')
     }
-  ]
+  ],
+  mode: 'history'
 })
