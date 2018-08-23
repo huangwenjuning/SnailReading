@@ -1,6 +1,6 @@
 <template>
   <div class="bookdesk">
-    bookdesk
+    <a href=""><img src="http://d.5857.com/gfwz_170113/desk_003.jpg" alt=""></a>
   </div>
 </template>
 <script>
