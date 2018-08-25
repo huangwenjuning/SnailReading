@@ -30,6 +30,11 @@ export default new Router({
         name: 'Mine',
         component: () => import('@/pages/mine/Mine')
       }]
+    },
+    {
+      path: '/editor',
+      name: 'Editor',
+      component: () => import('@/components/Editor')
     }
   ],
   mode: 'history'
